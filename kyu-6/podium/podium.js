@@ -1,5 +1,5 @@
 const podium = (scores) => {
-  if (Object.keys(scores) == 0) return {};
+  if (Object.keys(scores).length === 0) return {};
   const peopleInfo = Object.keys(scores).map((key) => ({
     player: key,
     score:
@@ -11,7 +11,7 @@ const podium = (scores) => {
   const sortedChampions = peopleInfo
     .filter(({ score }) => score !== undefined)
     .sort((a, b) => b.score - a.score);
-  if (sortedChampions == 0) return {};
+  if (sortedChampions.length === 0) return {};
 
   const gold = sortedChampions
     .filter(({ score }) => score === sortedChampions.at(0).score)
